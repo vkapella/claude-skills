@@ -1,0 +1,1 @@
+Need a deck for the architecture review next Thursday. We're proposing sharded Postgres over Spanner for the new ledger service. The room is staff and principal engineers. 60 minutes. Want them to leave with an opinion on the tradeoffs, not necessarily a final yes.

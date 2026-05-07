@@ -1,0 +1,1 @@
+I need to present a year-end review to the board on our cloud migration. Two of the four major workloads went well, one is still in flight, and one had a serious incident in Q3 we're still digging out from. 45-minute slot. Need to come out of it with alignment on what we keep doing and what we change.

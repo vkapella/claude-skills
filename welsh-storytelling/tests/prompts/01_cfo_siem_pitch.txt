@@ -1,0 +1,1 @@
+Make me a 5-slide deck for the CFO recommending we replace our SIEM with Microsoft Sentinel. 30-minute slot. Decision needed by end of next week. Budget is $1.8M over three years; current spend is $2.4M.

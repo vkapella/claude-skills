@@ -1,0 +1,1 @@
+Build a deck for our SRE team walking them through the new on-call rotation moving from PagerDuty to Opsgenie next month. 20 minutes at the team all-hands. They need to know what changes in their day-to-day.

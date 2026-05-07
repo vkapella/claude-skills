@@ -1,0 +1,27 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Python (the examples/ folders contain .py files)
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Generated outputs from example scripts
+*.pptx
+*.docx
+*.pdf
+output/
+outputs/
+
+# Backup files from in-place edits
+*.bak
+
+# Local test artifacts (not the prompt fixtures themselves — those are committed)
+tests/**/actual_output/
