@@ -25,3 +25,6 @@ outputs/
 
 # Local test artifacts (not the prompt fixtures themselves — those are committed)
 tests/**/actual_output/
+
+#Personal Access Token file
+*token.txt
