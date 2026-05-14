@@ -17,16 +17,22 @@ This guide covers four scenarios — pick the one that matches what you want to 
 welsh-storytelling/
 ├── SKILL.md                              ← entry point, read first
 ├── INSTALL.md                            ← this file
+├── CHANGELOG.md                          ← behavioral changes per version
 ├── references/
 │   ├── frameworks.md                     ← all Welsh frameworks
+│   ├── voice.md                          ← the four voice registers (v1.1+)
 │   ├── delivery.md                       ← Story Guide content rules
 │   └── slide_patterns.md                 ← slide patterns by role
 ├── templates/
-│   ├── interrogation.md                  ← 5-question intake script
+│   ├── interrogation.md                  ← intake script with voice inference
 │   └── story_guide_template.md           ← Story Guide skeleton
-└── examples/
-    ├── build_deck_example.py             ← working deck builder (BNY demo)
-    └── build_story_guide_example.py      ← working Story Guide builder (BNY demo)
+├── examples/
+│   ├── build_deck_example.py             ← working deck builder (BNY, Boardroom voice)
+│   └── build_story_guide_example.py      ← working Story Guide builder (BNY, Boardroom voice)
+└── tests/                                ← prompt fixtures and expected behaviors
+    ├── README.md                         ← how to run regression checks
+    ├── prompts/                          ← 5 test prompts (one per voice + ambiguous)
+    └── expected_behavior/                ← what each prompt should produce
 ```
 
 The skill is self-contained. It depends on `python-pptx` and `python-docx` (both standard) and stacks with whatever brand/format skill is available in your environment (`wwt-presentation`, public `pptx`, public `docx`).
@@ -98,9 +104,9 @@ For teams comfortable with version control, the cleanest approach:
 1. Create an internal Git repo: `your-org/claude-skills/welsh-storytelling/`
 2. Commit the folder there with a CHANGELOG.md tracking versions
 3. Document the install steps in your team's onboarding
-4. Use Git tags for releases (`v1.0.0`, `v1.1.0`)
+4. Use Git tags for releases (`welsh-v1.0`, `welsh-v1.1`)
 
-This is what I'd recommend for WWT specifically — alongside any other internal skills (wwt-brand, wwt-presentation, etc.). Treat the skill as code.
+This is what I'd recommend for WWT specifically — alongside any other internal skills (wwt-brand, wwt-presentation, etc.). Treat the skill as code. See the repo-root `AGENTS.md` for the recommended GitHub workflow.
 
 ---
 
@@ -126,7 +132,7 @@ Before publishing, add to the SKILL.md frontmatter:
 ```yaml
 ---
 name: welsh-storytelling
-version: 1.0.0
+version: 1.1.0
 author: [Your Name]
 license: [your license — MIT, Apache 2.0, proprietary, etc.]
 attribution: "Frameworks from 'The Backstory on Storytelling' by Michael Welsh, applied with permission."
@@ -164,18 +170,29 @@ The skill description (the `description:` field in SKILL.md frontmatter) is what
 
 ## Testing the skill before broad release
 
-A simple test loop:
+A small fixture suite lives in `tests/`. Use it before every release.
 
-1. Pick three test prompts that should trigger the skill:
-   - "Build me a deck for our Q3 board meeting on cybersecurity."
-   - "I need to pitch the new architecture to the CTO Tuesday — can you put something together?"
-   - "Help me prep for a 30-min talk on our restructuring. Need slides and prep notes."
-2. Pick three that should NOT trigger:
-   - "Write me an email to the team about Friday's offsite."
-   - "Summarize this PDF."
-   - "Help me debug this Python error."
-3. Run each prompt in a fresh Claude conversation with the skill loaded
-4. Check: did it trigger when expected? Did it produce both files? Did the Story Guide have all 9 sections?
+The five prompts in `tests/prompts/` each exercise one voice register plus one ambiguous case:
+
+1. `01_cfo_siem_pitch.txt` — should trigger and infer **Boardroom**
+2. `02_sre_rollout.txt` — should trigger and infer **Operator**
+3. `03_year_end_review.txt` — should trigger and infer **Reflective**
+4. `04_architecture_review.txt` — should trigger and infer **Technical**
+5. `05_ambiguous.txt` — should trigger and **ask** the voice question (not infer)
+
+For each, compare the run against the matching `tests/expected_behavior/*.md` file. Pass criteria:
+
+- The interrogation step **states the inferred voice** (or asks, for the ambiguous case)
+- Headlines, What-slide sentence, and Magic Wand close match the patterns in `references/voice.md` for that voice
+- The "Avoid in this voice" patterns do NOT appear
+- Both `.pptx` and `.docx` are produced
+- Slide count is within the time-slot bound
+
+Also run a small negative set — prompts that should NOT trigger the skill at all:
+
+- "Write me an email to the team about Friday's offsite."
+- "Summarize this PDF."
+- "Help me debug this Python error."
 
 If trigger accuracy is off, refine the `description:` field — that's the lever that controls when Claude reaches for the skill.
 
@@ -188,6 +205,9 @@ The description may not match the user's phrasing. Look at the actual phrases us
 
 **The skill triggers but only produces the deck, no Story Guide.**
 The "two-output pattern" instruction in SKILL.md may be getting deprioritized. Reinforce it — make the section header more visible, repeat the rule once more in the execution flow.
+
+**The deck defaults to Boardroom voice for an obvious Operator or Reflective prompt.**
+The voice inference table in `templates/interrogation.md` may not be reaching Claude in Step 2. Verify SKILL.md Step 2 explicitly says to read `references/voice.md`. Run the matching test fixture in `tests/prompts/` to confirm.
 
 **The Story Guide formatting looks wrong.**
 The python-docx code in `examples/build_story_guide_example.py` is the working reference. If a Story Guide comes out misformatted, compare against that example and identify what's different.
