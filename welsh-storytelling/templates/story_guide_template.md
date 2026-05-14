@@ -2,6 +2,8 @@
 
 The skeleton for the .docx Story Guide companion document. Use this as the structural reference when generating the file. The visual rendering details and python-docx code patterns are in `examples/build_story_guide_example.py`.
 
+> **Voice consistency.** The Story Guide must be in the same voice register as the deck. The visual identity (colors, fonts, layout) is voice-agnostic — only the *content* shifts. The sections most affected by voice are: the Core Message wording, the Diamond's facet content, the RWV library angles, the verbatim Opening/Closing lines, and how prominently the "I Don't Know" list features. See `references/voice.md` for the per-voice patterns and `references/delivery.md` for section-by-section voice notes.
+
 ---
 
 ## Document structure
@@ -9,7 +11,7 @@ The skeleton for the .docx Story Guide companion document. Use this as the struc
 ```
 COVER
 ├── Eyebrow: "STORY GUIDE  ·  COMPANION TO THE SLIDE DECK"
-├── Title: [The core message restated as a memorable phrase]
+├── Title: [The core message restated as a memorable phrase — voice-matched]
 ├── Horizontal rule
 ├── Italic subtitle: "Delivery coaching for the [topic] presentation. Built on Michael Welsh's storytelling frameworks from The Backstory on Storytelling."
 └── Footer line: "[Brand]  ·  Prepared for [audience]  ·  [Month YYYY]"
@@ -18,28 +20,34 @@ COVER
 ├── Body lead-in: "If [audience] leaves the room remembering one sentence, this is the sentence:"
 ├── Callout box (light blue tint, left accent border):
 │   ├── Eyebrow: "CORE MESSAGE"
-│   └── Italic body: [The one sentence]
+│   └── Italic body: [The one sentence — voice-matched]
 └── Body close: "Everything else in the deck is in service of this one sentence. When in doubt during Q&A, return to this."
 
 2. THE DIAMOND
 ├── Italic subtitle: "Welsh's framework: every core message is a diamond with five facets..."
 └── 5-row table (label column tinted blue, content column white):
-    ├── The Point        | [headline restated]
+    ├── The Point        | [headline restated — voice-matched]
     ├── The Context      | [the setup, the why now]
     ├── The Evidence     | [the proof, the data]
     ├── The Application  | [what it means for the audience]
-    └── The Call to Action | [what you need from them]
+    └── The Call to Action | [what you need from them — or commitments to learn in Reflective voice]
 
 3. REPETITION WITH VARIATION LIBRARY
 ├── Italic subtitle: "Welsh's principle: tell the same truth three different ways..."
 ├── Sub-section: "Three ways to land [primary message]"
-│   ├── Labeled para: [Angle 1] — "[variation]"
-│   ├── Labeled para: [Angle 2] — "[variation]"
-│   └── Labeled para: [Angle 3] — "[variation]"
+│   ├── Labeled para: [Angle 1 per voice] — "[variation]"
+│   ├── Labeled para: [Angle 2 per voice] — "[variation]"
+│   └── Labeled para: [Angle 3 per voice] — "[variation]"
 ├── Sub-section: "Three ways to land [secondary message]"
 │   └── (3 variations with different angles)
 └── Sub-section: "Three ways to close"
-    └── (3 closing line options)
+    └── (3 closing line options — voice-matched cadence)
+
+Voice-matched angle defaults (see delivery.md):
+- Boardroom: Technical / Financial / Strategic
+- Operator: Day-1 reality / Honest / Forward-looking
+- Technical: Tradeoff-framed / Constraint-framed / Comparison-framed
+- Reflective: Honest / Operational / Future-facing
 
 4. ARC MAP — HOW TIME GETS SPENT
 ├── Italic subtitle: "Welsh's math: 60-minute meeting = ~47 minutes of material maximum..."
@@ -55,20 +63,24 @@ COVER
     ├── Italic orange: "Technique:  [Welsh technique name]"
     └── Indented body in quotes: "[drafted answer]"
 
+Voice note: Technical voice favors Complete Disassembly and Disambiguate-and-Redirect. Reflective voice favors honest "I Don't Know" more than the other voices.
+
 6. TOPICS WHERE "I DON'T KNOW" IS THE RIGHT ANSWER
 ├── Italic subtitle: "Welsh's power move: admitting uncertainty turns vendors into partners..."
 └── Bulleted list:
     └── ·  [Bold navy topic]  [italic gray reason]
 
+Voice note: In Reflective voice, consider promoting 1-2 of these onto a deck slide (the Emergent Understanding slide if Arc of Uncertainty was the chosen arc).
+
 7. OPENING AND CLOSING LINES — MEMORIZE THESE VERBATIM
 ├── Eyebrow: "FIRST 30 SECONDS"
 ├── Callout box (light blue tint):
 │   ├── Eyebrow: "OPENING (VERBATIM)"
-│   └── Italic body: "[scripted opening line]"
+│   └── Italic body: "[scripted opening line — voice-matched]"
 ├── Eyebrow: "LAST 30 SECONDS"
 └── Callout box (orange tint):
     ├── Eyebrow: "CLOSING (VERBATIM)"
-    └── Italic body: "[scripted closing line]  Then SHUT UP. Three-second rule."
+    └── Italic body: "[scripted closing line — voice-matched]  Then SHUT UP. Three-second rule."
 
 8. DELIVERY NOTES — POISE, PRESENCE, POSTURE
 ├── Sub-heading: "Before you walk in"
@@ -76,7 +88,7 @@ COVER
 ├── Sub-heading: "During delivery"
 │   └── Bullets: Three-Second Rule, eye contact, movement, recovery from stumbles
 └── Sub-heading: "Where to slow down"
-    └── Bullets: specific slides where extra time matters
+    └── Bullets: specific slides where extra time matters (voice-dependent — see delivery.md)
 
 9. THE CUT LIST — WHAT'S IN THE APPENDIX AND WHY IT'S NOT IN THE FRONT
 ├── Italic subtitle: "Welsh: 'Make people pitch why their content deserves inclusion.'..."
@@ -107,6 +119,8 @@ If stacking with `wwt-brand`, use the WWT palette. Otherwise:
 | Light blue tint bg | `#E6F3FD` | Callout box backgrounds |
 | Light gray bg | `#F5F7FA` | Quiet card backgrounds |
 | Orange tint bg | `#FFF4E6` | Closing callout box background |
+
+Visual tokens are voice-agnostic. A Reflective Story Guide uses the same palette as a Boardroom Story Guide.
 
 ---
 

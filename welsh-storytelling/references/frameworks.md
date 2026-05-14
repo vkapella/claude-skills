@@ -4,6 +4,8 @@ This is the authoritative reference for Michael Welsh's storytelling frameworks 
 
 The frameworks fall into three groups: structural (shape the deck), delivery (shape the Story Guide), and philosophical (shape both).
 
+> **A note on voice.** These frameworks are universal — the 5 Slide Rule, the 5-Beat arc, the Diamond, and the Rule of 3 apply regardless of who's in the room. The **register** (the actual word choice, headline rhythm, and closing cadence) does NOT. See `voice.md` for the four registers (Boardroom, Operator, Technical, Reflective) and how to pick the right one. Read voice.md and slide_patterns.md together when generating the deck.
+
 ---
 
 ## A. Structural frameworks (shape the deck)
@@ -29,6 +31,8 @@ The 5-beat arc Welsh recommends as the default narrative spine.
 | **Why** | What it means for the audience. The strategic frame. The cost/benefit framed honestly. | Replaced with another features dump. |
 | **Magic Wand** | End with wanting. Paint the picture of success. State the ask. | "Thank you, any questions?" |
 
+**Voice note:** The "End with wanting" rule in the Magic Wand row is **conditional on voice**. Boardroom/Operator/Technical voices end with a concrete ask. Reflective voice ends with direction and commitments to learn. See voice.md.
+
 ### Beginnings, Middles, Ends (BMEs)
 
 Most people start in the middle (presenting facts without context) or at the end (showing results without the journey). This is "aftermath storytelling."
@@ -46,6 +50,8 @@ The power of threes. Not magical, but neurologically reliable.
 - **In linkage:** each section connects back to the prior with a 3-beat reference.
 - **Why not 4 or 5?** Audiences remember 3. They forget 5. They lose count past 7.
 
+**Voice note:** Technical voice is allowed to *show* more than 3 on the How slide (assumption tables, layered diagrams). The Rule of 3 still governs the speaker's emphasis even when the slide carries more.
+
 ### Designing for Diamonds
 
 A Diamond has five facets. The same truth seen from five angles.
@@ -60,6 +66,8 @@ A Diamond has five facets. The same truth seen from five angles.
 
 In the Story Guide, the Diamond is laid out as a 5-row table so the presenter can pivot between facets when fielding questions. Asked about cost? Surface the Application facet. Asked about technical risk? Surface Evidence. Asked about timeline? Surface Call to Action.
 
+**Voice note:** The Diamond's facet *content* shifts by voice. A Reflective Diamond's Call to Action is "commitments to learn," not "decision needed Friday." A Technical Diamond's Evidence is denser and names tradeoffs. See voice.md "How voice affects each slide role."
+
 ### Arcs of Uncertainty
 
 The five-stage arc for talks where the topic is genuinely uncertain (transformation pitches, leadership talks, post-mortems).
@@ -71,6 +79,8 @@ The five-stage arc for talks where the topic is genuinely uncertain (transformat
 5. **Emergent Understanding** — What we now know. What's still unknown.
 
 Use this arc when the topic involves change, transformation, or honest uncertainty. The Trough of Despair is the most powerful slide in the deck — most decks delete it. Don't.
+
+**Strong voice correlation:** Arc of Uncertainty almost always pairs with **Reflective voice**. Forcing a Boardroom decision-ask onto an Arc of Uncertainty deck produces exactly the flamboyant, oversold feel that voice.md is designed to prevent.
 
 ### Familiar → Foreign → Transformation → Return
 
@@ -103,7 +113,7 @@ Tell the same truth multiple ways without sounding repetitive.
 4. **Mental Models as Variation Tools** — Analogies and metaphors give the same idea a different surface. "Think of it like X" lands when the literal explanation didn't.
 5. **Complexity Simplified Through RWV** — Hard ideas need multiple passes from different directions. Don't explain once and move on.
 
-In the Story Guide, build an RWV library: 3 ways to land each major message. The presenter picks 2-3 based on which angle the room responds to.
+In the Story Guide, build an RWV library: 3 ways to land each major message. The presenter picks 2-3 based on which angle the room responds to. **The angles chosen should match the voice** — a Reflective Story Guide's RWV library favors "honest / operational / future-facing" angles over the Boardroom default of "technical / financial / strategic."
 
 ### Handling Curveball Questions — 6 Techniques
 
@@ -139,6 +149,8 @@ Admitting uncertainty is the most underused move in business presentations.
 - "I don't know" turns a Q&A into a working session.
 - The Story Guide should include an "I Don't Know" list — topics where the presenter is pre-authorized to admit uncertainty without scrambling.
 
+**Voice note:** In Reflective voice, the "I Don't Know" list is a first-class citizen — it may appear in the deck itself, not just the Story Guide. In Boardroom voice, it lives only in the Story Guide so the presenter can deploy it during Q&A without showing uncertainty on a slide.
+
 ---
 
 ## C. Philosophical principles (shape both deck AND guide)
@@ -169,13 +181,14 @@ Don't lie, manipulate, hide behind jargon, or pretend to have answers you don't.
 
 ## When to use which arc
 
-| If the deck is about... | Use this arc |
-|---|---|
-| A proposal, recommendation, or sales pitch | **5-Beat (Setup→What→How→Why→Magic Wand)** — default |
-| Innovation, change management, or transformation | **Familiar → Foreign → Transformation → Return** |
-| A post-mortem, leadership talk, or honest reflection | **Arc of Uncertainty** |
-| A board update or status report | **5-Beat**, but compress Setup and expand Why |
-| A technical deep-dive | **5-Beat**, but expand How and compress Why |
+| If the deck is about... | Use this arc | Typical voice |
+|---|---|---|
+| A proposal, recommendation, or sales pitch | **5-Beat (Setup→What→How→Why→Magic Wand)** — default | Boardroom |
+| Innovation, change management, or transformation | **Familiar → Foreign → Transformation → Return** | Boardroom or Reflective |
+| A post-mortem, leadership talk, or honest reflection | **Arc of Uncertainty** | Reflective |
+| A board update or status report | **5-Beat**, but compress Setup and expand Why | Boardroom (or Reflective if honest review) |
+| A technical deep-dive | **5-Beat**, but expand How and compress Why | Technical |
+| Internal team rollout or operational briefing | **5-Beat**, simple cadence | Operator |
 
 ---
 
